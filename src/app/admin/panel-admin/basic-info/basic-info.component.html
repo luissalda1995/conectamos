@@ -1,0 +1,23 @@
+<md-card>
+	<md-card-title>Información Basica</md-card-title>
+	<md-card-content>
+		<md-grid-list cols="4">
+			<md-grid-tile colspan="4" rowspan="1">
+			imagen
+			</md-grid-tile>
+			<md-input-container>
+			  <input mdInput [(ngModel)]="place.nombre" placeholder="Nombre">
+			</md-input-container>
+		  	<md-input-container>
+			  <input type="number" [(ngModel)]="place.latitud" mdInput placeholder="Latitud">
+			</md-input-container>
+			<md-input-container>
+			  <input type="number" [(ngModel)]="place.longitud" mdInput placeholder="Longitud">
+			</md-input-container>
+			<md-input-container>
+			  <input type="text" [(ngModel)]="place.descripcion" mdInput placeholder="Descripción">
+			</md-input-container>
+			<button md-button (click)="savePlace(place)">Guardar</button>
+		</md-grid-list>
+	</md-card-content>
+</md-card>

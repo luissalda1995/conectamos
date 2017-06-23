@@ -1,0 +1,16 @@
+<md-card>
+	<md-card-title>Login</md-card-title>
+	<md-card-content>
+		<form (submit)="loginWithEmail($event, email.value, password.value)">
+			<md-grid-list cols="1">
+			  	<md-input-container>
+				  <input #email type="email" mdInput placeholder="Username">
+				</md-input-container>
+				<md-input-container>
+				  <input #password type="password" mdInput placeholder="Password">
+				</md-input-container>
+				<button md-button type="submit">Login</button>
+			</md-grid-list>
+		</form>
+	</md-card-content>
+</md-card>

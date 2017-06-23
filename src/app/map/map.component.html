@@ -1,0 +1,16 @@
+<md-select [(ngModel)]="selectedCity" (ngModelChange)="getPlaces('restaurantes')">
+  <md-option *ngFor="let city of cities | async" [value]="city.$value">
+    {{ city.$value }}
+  </md-option>
+</md-select>
+<sebm-google-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+	<sebm-google-map-marker *ngFor="let place of places  | async" [latitude]="place.latitud" [longitude]="place.longitud">
+		<sebm-google-map-info-window [disableAutoPan]="true">
+		 <strong>Información</strong>
+		 <br>
+         {{place.nombre}}
+         <br>
+         <button md-button (click)="openInfoCard(place)">Ver más</button>
+       </sebm-google-map-info-window>
+	</sebm-google-map-marker>
+</sebm-google-map>
